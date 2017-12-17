@@ -1,0 +1,472 @@
+[
+    {
+        "name":"Test DC1",
+        "values": [
+          {
+            "name":"Volume",
+            "type": "int",
+            "min": 0,
+            "max": 127,
+            "msg": 10
+          },
+          {
+            "name": "Bypass",
+            "type": "enum",
+            "enums": [
+              {"name":"On", "value": 32},
+              {"name":"Off", "value": 96}
+            ],
+            "msg": 20
+          }
+        ]
+    },
+    {
+      "name":"MIDI MuRF",
+      "values": [
+        {
+          "name": "Pattern",
+          "type": "int",
+          "min": 0,
+          "max": 24,
+          "msg": 4
+        },
+        {
+          "name": "Envelope",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "display-min": 0,
+          "display-max": 10,
+          "msg": 3,
+          "value1": 1
+        },
+        {
+          "name": "Drive",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 2
+        },
+        {
+          "name": "LFO Rate/Sweep",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 1
+        },
+        {
+          "name": "Volume (Output)",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 7
+        },
+        {
+          "name":"Mix",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 8
+        },
+        {
+          "name": "Rate",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 9
+        },
+        {
+          "name": "Staccato Mode",
+          "type": "enum",
+          "enums": [
+            {"name":"On", "value": 32},
+            {"name":"Off", "value": 96}
+          ],
+          "msg": 3,
+          "value1": 68
+        },
+        {
+          "name": "Envelope Scale",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 70
+        },
+        {
+          "name": "LFO",
+          "type": "enum",
+          "enums": [
+            {"name":"On", "value": 32},
+            {"name":"Off", "value": 96}
+          ],
+          "msg": 3,
+          "value1": 85
+        },
+        {
+          "name": "Freq Bass/Mids",
+          "type": "enum",
+          "enums": [
+            {"name":"Bass", "value": 32},
+            {"name":"Mids", "value": 96}
+          ],
+          "msg": 3,
+          "value1": 86
+        },
+        {
+          "name": "Bypass",
+          "type": "enum",
+          "enums": [
+            {"name":"On", "value": 32},
+            {"name":"Off", "value": 96}
+          ],
+          "msg": 3,
+          "value1": 1
+        },
+        {
+          "name": "Pattern Clock Sync",
+          "type": "enum",
+          "enums": [
+            {"name":"On", "value": 32},
+            {"name":"Off", "value": 96}
+          ],
+          "msg": 3,
+          "value1": 1
+        },
+        {
+          "name": "Filter 1",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 20
+        },
+        {
+          "name": "Filter 2",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 21
+        },{
+          "name": "Filter 3",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 22
+        },{
+          "name": "Filter 4",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 23
+        },{
+          "name": "Filter 5",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 24
+        },{
+          "name": "Filter 6",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 25
+        },{
+          "name": "Filter 7",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 26
+        },{
+          "name": "Filter 8",
+          "type": "int",
+          "min": 0,
+          "max": 127,
+          "msg": 3,
+          "value1": 27
+        }
+      ]
+  },
+
+  {
+    "name":"MF-104M",
+    "values": [
+      {
+        "name": "Output Level",
+        "type": "int",
+        "min": 0,
+        "max": 127,
+        "msg": 7
+      },
+      {
+        "name": "Time",
+        "type": "int",
+        "min": 0,
+        "max": 127,
+        "msg": 12
+      },
+      {
+        "name": "Feedback",
+        "type": "int",
+        "min": 0,
+        "max": 127,
+        "msg": 13
+      },
+      {
+        "name": "Mix",
+        "type": "int",
+        "min": 0,
+        "max": 127,
+        "msg": 14
+      },
+      {
+        "name": "LFO Rate",
+        "type": "int",
+        "min": 0,
+        "max": 127,
+        "msg": 15
+      },
+      {
+        "name": "LFO Amount",
+        "type": "int",
+        "min": 0,
+        "max": 127,
+        "msg": 16
+      },
+      {
+        "name": "LFO Wafeform",
+        "type": "enum",
+        "enums": [
+          {"name":"Sine", "value": 0},
+          {"name":"Triangle", "value": 16},
+          {"name":"Square", "value": 32},
+          {"name":"Saw", "value": 48},
+          {"name":"Ramp", "value": 64},
+          {"name":"S&H", "value": 80},
+          {"name":"Smooth S&G", "value": 96}
+        ],
+        "msg": 102
+      },
+      {
+        "name": "Range",
+        "type": "enum",
+        "enums": [
+          {"name":"Fast", "value": 0},
+          {"name":"Slow", "value": 64}
+        ],
+        "msg": 86
+      },
+      {
+        "name": "Bypass",
+        "type": "enum",
+        "enums": [
+          {"name":"On", "value": 0},
+          {"name":"Off", "value": 64}
+        ],
+        "msg": 80
+      },
+
+
+      {
+        "name": "Time Slew Rate",
+        "type": "int",
+        "min": 0,
+        "max": 127,
+        "msg": 5
+      },
+      {
+        "name": "Pitch Bend Amount",
+        "type": "enum",
+        "enums": [
+          {"name":"Off", "value": 0},
+          {"name":"2 Semi", "value": 16},
+          {"name":"3 Semi", "value": 32},
+          {"name":"4 Semi", "value": 48},
+          {"name":"5 Semi", "value": 64},
+          {"name":"7 Semi", "value": 80},
+          {"name":"12 Semi", "value": 96},
+          {"name":"24 Semi", "value": 112}
+        ],
+        "msg": 83
+      },
+      {
+        "name": "Filter Bright/Dark",
+        "type": "enum",
+        "enums": [
+          {"name":"Birght", "value": 0},
+          {"name":"Dark", "value": 64}
+        ],
+        "msg": 85
+      },
+      {
+        "name": "Delay Time Multiplier",
+        "type": "enum",
+        "enums": [
+          {"name":"Norm", "value": 0},
+          {"name":"x2", "value": 32},
+          {"name":"x4", "value": 64},
+          {"name":"x8", "value": 96}
+        ],
+        "msg": 87
+      },
+      {
+        "name": "Delay Time Midi Sync Enable",
+        "type": "enum",
+        "enums": [
+          {"name":"Disabled", "value": 0},
+          {"name":"Enabled", "value": 64}
+        ],
+        "msg": 89
+      },
+      {
+        "name": "LFO Phase Reset",
+        "type": "enum",
+        "enums": [
+          {"name":"Reset", "value": 0}
+        ],
+        "msg": 105
+      },
+      {
+        "name": "LFO Clock Divisions CC#72",
+        "type": "enum",
+        "enums": [
+          {"name":"4 Whole", "value": 0},
+          {"name":"3 Whole", "value": 6},
+          {"name":"2 Whole", "value": 12},
+          {"name":"WH + 1/2 Dot", "value": 18},
+          {"name":"WH + 1/2", "value": 24},
+          {"name":"WH + 1/4", "value": 30},
+          {"name":"WH", "value": 35},
+          {"name":"1/2 Dot", "value": 41},
+          {"name":"WH T", "value": 47},
+          {"name":"1/2", "value": 53},
+          {"name":"1/4 Dot", "value": 59},
+          {"name":"1/2 T", "value": 64},
+          {"name":"1/4", "value": 70},
+          {"name":"1/8 Dot", "value": 76},
+          {"name":"1/4 T", "value": 82},
+          {"name":"1/8", "value": 88},
+          {"name":"1/16 Dot", "value": 94},
+          {"name":"1/8 T", "value": 99},
+          {"name":"1/16", "value": 105},
+          {"name":"1/16 T", "value": 111},
+          {"name":"1/32", "value": 117},
+          {"name":"1/32 T", "value": 123}
+        ],
+        "msg": 72
+      },
+      {
+        "name": "LFO Clock Divisions CC#107",
+        "type": "enum",
+        "enums": [
+          {"name":"4 Whole", "value": 0},
+          {"name":"3 Whole", "value": 6},
+          {"name":"2 Whole", "value": 12},
+          {"name":"WH + 1/2 Dot", "value": 18},
+          {"name":"WH + 1/2", "value": 24},
+          {"name":"WH + 1/4", "value": 30},
+          {"name":"WH", "value": 35},
+          {"name":"1/2 Dot", "value": 41},
+          {"name":"WH T", "value": 47},
+          {"name":"1/2", "value": 53},
+          {"name":"1/4 Dot", "value": 59},
+          {"name":"1/2 T", "value": 64},
+          {"name":"1/4", "value": 70},
+          {"name":"1/8 Dot", "value": 76},
+          {"name":"1/4 T", "value": 82},
+          {"name":"1/8", "value": 88},
+          {"name":"1/16 Dot", "value": 94},
+          {"name":"1/8 T", "value": 99},
+          {"name":"1/16", "value": 105},
+          {"name":"1/16 T", "value": 111},
+          {"name":"1/32", "value": 117},
+          {"name":"1/32 T", "value": 123}
+        ],
+        "msg": 107
+      },
+      {
+        "name": "Enable LFO MIDI Sync",
+        "type": "enum",
+        "enums": [
+          {"name":"Disabled", "value": 0},
+          {"name":"Enabled", "value": 64}
+        ],
+        "msg": 108
+      },
+      {
+        "name": "Enable LFO Note Reset",
+        "type": "enum",
+        "enums": [
+          {"name":"Disabled", "value": 0},
+          {"name":"Enabled", "value": 64}
+        ],
+        "msg": 109
+      },
+      {
+        "name": "Enable Midi Note Spillover",
+        "type": "enum",
+        "enums": [
+          {"name":"Disabled", "value": 0},
+          {"name":"Enabled", "value": 64}
+        ],
+        "msg": 110
+      },
+      {
+        "name": "Midi Note Mode",
+        "type": "enum",
+        "enums": [
+          {"name":"Off", "value": 0},
+          {"name":"Absolute", "value": 42},
+          {"name":"Relative", "value": 84}
+        ],
+        "msg": 113
+      },
+      {
+        "name": "Midi Tap Tempo A",
+        "type": "enum",
+        "enums": [
+          {"name":"Tab", "value": 0}
+        ],
+        "msg": 114
+      },
+      {
+        "name": "Midi Tap Temp B",
+        "type": "enum",
+        "enums": [
+          {"name":"Tap", "value": 64}
+        ],
+        "msg": 115
+      },
+      {
+        "name": "Time/Midi LED Select",
+        "type": "enum",
+        "enums": [
+          {"name":"Disabled", "value": 0},
+          {"name":"Enabled", "value": 64}
+        ],
+        "msg": 117
+      },
+      {
+        "name": "Enable Mod Wheel to LFO Amount",
+        "type": "enum",
+        "enums": [
+          {"name":"Disabled", "value": 0},
+          {"name":"Enabled", "value": 64}
+        ],
+        "msg": 119
+      }
+    ]
+  }
+
+]
