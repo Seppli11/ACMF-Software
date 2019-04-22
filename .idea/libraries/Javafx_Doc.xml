@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Javafx Doc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="https://docs.oracle.com/javase/8/javafx/api/toc.htm" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
