@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import ch.sebi.acmf.ui.TimelinePane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="534.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.sebi.acmf.ui.ACMFMainController">
+   <center>
+      <SplitPane dividerPositions="0.2829403606102635" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <VBox prefHeight="462.0" prefWidth="179.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <ListView fx:id="song_listview" editable="true" prefHeight="412.0" prefWidth="165.0" VBox.vgrow="SOMETIMES" />
+                  <FlowPane alignment="CENTER" prefHeight="25.0" prefWidth="183.0">
+                     <children>
+                        <Button fx:id="add_song" mnemonicParsing="false" onAction="#addSongBtn" text="+" />
+                        <Button fx:id="remove_song" mnemonicParsing="false" onAction="#removeSongBtn" text="-" />
+                        <Button fx:id="edit_song" mnemonicParsing="false" onAction="#editSongBtn" text="edit" />
+                        <Button fx:id="add_song1" mnemonicParsing="false" onAction="#moveSongUpBtn" text="hoch" />
+                        <Button fx:id="remove_song1" mnemonicParsing="false" onAction="#moveSongDownBtn" text="herunter" />
+                     </children>
+                  </FlowPane>
+               </children>
+            </VBox>
+            <SplitPane dividerPositions="0.29336188436830835" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+               <items>
+                  <HBox fx:id="templates_hbox" disable="true" prefHeight="202.0" prefWidth="419.0" SplitPane.resizableWithParent="false">
+                     <children>
+                        <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="231.0" prefWidth="28.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#addTemplateBtn" text="+" />
+                              <Button mnemonicParsing="false" onAction="#removeTemplateBtn" prefHeight="25.0" prefWidth="24.0" text="-" />
+                           </children>
+                        </FlowPane>
+                        <ScrollPane fx:id="timeline_scrollpane" prefHeight="133.0" prefWidth="481.0" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+                           <content>
+                              <TimelinePane fx:id="timeline_panel" />
+                           </content>
+                        </ScrollPane>
+                     </children></HBox>
+                  <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+                     <items>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="midi1_label" text="Label" />
+                              <ListView fx:id="midi1" disable="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="midi2_label" text="Label" />
+                              <ListView fx:id="midi2" disable="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </items>
+                  </SplitPane>
+               </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Datei">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#saveSongs" text="Speichern">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#saveSongAs" text="Speicherort">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <CheckMenuItem fx:id="connectedCb" mnemonicParsing="false" selected="true" text="Verbinden" />
+                  <Menu fx:id="export_menu" mnemonicParsing="false" text="Exportieren">
+                     <items>
+                        <MenuItem disable="true" mnemonicParsing="false" text="Laded ACMF..." />
+                     </items></Menu>
+              <MenuItem mnemonicParsing="false" text="Beenden" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Bearbeiten">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#undo" text="Rückgängig">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#redo" text="Widerherstellen">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Y" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#addSongBtn" text="Song hinzufügen" />
+                  <MenuItem mnemonicParsing="false" onAction="#addTemplateBtn" text="Template hinzufügen" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Hilfe">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
