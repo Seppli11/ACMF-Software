@@ -25,6 +25,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.ChoiceBox;
@@ -81,8 +82,9 @@ public class ACMFMainController {
 	@FXML
 	private CheckMenuItem connectedCb;
 
-	public void setState(Stage s) {
+	public void setStage(Stage s) {
 		this.stage = s;
+		setTitleMsg(SettingsManager.SONG_DIRECTORY);
 	}
 
 	@FXML
@@ -146,6 +148,18 @@ public class ACMFMainController {
 			}
 		}).start();
 
+		setTitleMsg(SettingsManager.SONG_DIRECTORY);
+	}
+
+	/**
+	 * Sets the message of the title
+	 *
+	 * @param msg the message
+	 */
+	public void setTitleMsg(String msg) {
+		if (stage != null) {
+			stage.setTitle("ACMF Software: " + msg);
+		}
 	}
 
 	// redo/undo stuff
@@ -191,8 +205,8 @@ public class ACMFMainController {
 		dialog.setTitle("Songname");
 		dialog.setHeaderText("Songeingstellungen:");
 
-		ButtonType cancleButton = new ButtonType("Abbrechen");
-		ButtonType createButton = new ButtonType("Ok");
+		ButtonType cancleButton = new ButtonType("Abbrechen", ButtonData.CANCEL_CLOSE);
+		ButtonType createButton = new ButtonType("Ok", ButtonData.OK_DONE);
 		dialog.getDialogPane().getButtonTypes().addAll(cancleButton, createButton);
 
 		GridPane grid = new GridPane();
@@ -359,6 +373,26 @@ public class ACMFMainController {
 	}
 
 	@FXML
+	private void openSongs() {
+		DirectoryChooser dc = new DirectoryChooser();
+		File songDir = new File(SettingsManager.SONG_DIRECTORY);
+		if (songDir.exists()) {
+			dc.setInitialDirectory(songDir);
+		}
+		File f = dc.showDialog(timeline_panel.getScene().getWindow());
+		if (f == null) {
+			return;
+		}
+		SettingsManager.preferences.put(SettingsManager.SONG_DIRECTORY_ID, f.getAbsolutePath());
+		SettingsManager.reload();
+		SongSet.reload();
+
+		song_listview.getItems().setAll(SongSet.currentSongSet.songs);
+		timeline_panel.changeSong(null);
+		setTitleMsg(SettingsManager.SONG_DIRECTORY);
+	}
+
+	@FXML
 	private void saveSongs() {
 		File songDirectory = new File(SettingsManager.SONG_DIRECTORY);
 		if(!songDirectory.exists()) {
@@ -387,10 +421,20 @@ public class ACMFMainController {
 		if (f == null) {
 			return;
 		}
+		if (f.list().length != 0) {
+			Alert alert = new Alert(AlertType.WARNING, "", ButtonType.NO, ButtonType.YES);
+			alert.setContentText("Der Ordner \"" + f.getAbsolutePath()
+			+ "\" ist nicht leer. Sind sie sicher das Sie den Inhalt überschreiben möchten?");
+			alert.setTitle("Nicht leerer Ordner ausgewählt");
+			if (!alert.showAndWait().orElse(ButtonType.NO).equals(ButtonType.YES)) {
+				return;
+			}
+		}
 		SettingsManager.preferences.put(SettingsManager.SONG_DIRECTORY_ID, f.getAbsolutePath());
 		SettingsManager.reload();
 
 		saveSongs();
+		setTitleMsg(f.getAbsolutePath());
 	}
 
 	public ListView<Song> getSong_listview() {
